@@ -1,4 +1,4 @@
-import { IsString, IsNumber , IsDateString } from 'class-validator';
+import { IsString, IsNumber } from 'class-validator';
 import { Type } from 'class-transformer';
 
 
@@ -14,4 +14,5 @@ export class CreateChartDto{
 
     @IsString()
     readonly password? : string;
+
 }

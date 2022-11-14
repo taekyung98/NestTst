@@ -6,8 +6,13 @@ import {ChartRepository} from "./chart.repository";
 export class ChartService {
     constructor(private readonly chartRepository: ChartRepository) {}
 
-     async getAllCharts(): Promise<CreateChartDto[]> {
-        return await this.chartRepository.getAllCharts();
+     async getAllCharts(): Promise<string[]> {
+        return this.chartRepository.getAllCharts();
+
+    }
+
+    async createChart(chartData : CreateChartDto){
+        return this.chartRepository.createChart(chartData);
     }
 
 }

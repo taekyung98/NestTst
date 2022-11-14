@@ -4,11 +4,19 @@ import {CreateChartDto} from "./dto/create.chart.dto";
 
 @Controller('chart')
 export class ChartController {
-    constructor(private chartService : ChartService) {}
+    constructor(private readonly chartService : ChartService) {}
 
-    @Get()
-    async getAllChart():Promise<CreateChartDto[]> {
+    //조회
+    @Get('/getChart')
+    async getAllChart():Promise<string[]> {
         return await this.chartService.getAllCharts();
+
     }
+
+    @Post()
+    async createChart(@Body() chartData: CreateChartDto){
+        return await this.chartService.createChart(chartData);
+    }
+
 
 }

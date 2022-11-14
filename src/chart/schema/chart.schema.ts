@@ -1,11 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-
 import { Document } from 'mongoose'
 
-export type chartDocument = chart & Document;
+export type ChartDocument = Chart & Document;
 
 @Schema()
-export class chart {
+export class Chart {
     @Prop()
     userId: string;
     @Prop()
@@ -15,4 +14,4 @@ export class chart {
 
 }
 
-export const ChartSchema = SchemaFactory.createForClass(chart)
+export const ChartSchema = SchemaFactory.createForClass(Chart)
